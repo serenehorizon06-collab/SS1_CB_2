@@ -21,6 +21,10 @@ public class ProductController {
         this.productService = productService;
     }
 
+    // Khai báo ProductService để Controller gọi xử lý logic sản phẩm
+    // @Autowired // Spring tự tiêm object ProductService đã tạo sẵn vào biến này
+    // private ProductService productService;
+    
     // Nhận request GET từ đường dẫn /products
     // Ví dụ: http://localhost:8080/products
     @GetMapping("/products")
