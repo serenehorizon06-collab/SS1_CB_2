@@ -26,4 +26,42 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return products;
     }
+
+    // Thêm sản phẩm mới
+    public Product addProduct(Product product) {
+        products.add(product);
+        return product;
+    }
+
+    // Cập nhật sản phẩm theo id
+    public Product updateProduct(Long id, Product updatedProduct) {
+
+        for (Product product : products) {
+
+            if (product.getId().equals(id)) {
+
+                product.setName(updatedProduct.getName());
+                product.setPrice(updatedProduct.getPrice());
+
+                return product;
+            }
+        }
+
+        return null;
+    }
+
+    // Xóa sản phẩm theo id
+    public boolean deleteProduct(Long id) {
+
+        for (Product product : products) {
+
+            if (product.getId().equals(id)) {
+
+                products.remove(product);
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
